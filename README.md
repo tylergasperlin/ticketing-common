@@ -1,5 +1,5 @@
 # NPM
-[https://www.npmjs.com/package/@tylergasperlin/ticketing-common?activeTab=explore]
+[https://www.npmjs.com/package/@tylergasperlin/ticketing-common]
 # PACKAGES IN THIS PROJECT ARE SHARED BETWEEN PROJECTS AND PUBLISHED TO NPM
 1. npm login
 2. See tylergasperlin organization
