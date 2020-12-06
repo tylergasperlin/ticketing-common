@@ -14,3 +14,6 @@
 1. main specificies the index js file from build folder
 2. types specifies the typescript declarations file
 3. files specifies the files we want in the published build. 
+
+# npm commands increment version
+1. npm version patch  = increment version number on far right
