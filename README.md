@@ -1,4 +1,4 @@
-# NPM
+# NPM Package
 [https://www.npmjs.com/package/@tylergasperlin/ticketing-common]
 # PACKAGES IN THIS PROJECT ARE SHARED BETWEEN PROJECTS AND PUBLISHED TO NPM
 1. npm login
