@@ -1,9 +1,12 @@
 {
   "name": "@tylergasperlin/ticketing-common",
-  "version": "1.0.18",
+  "version": "1.0.17",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
+  "files": [
+    "./build/**/*"
+  ],
   "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
