@@ -6,6 +6,8 @@
 3. npm publish --access public
 4. package.json name and version are important when publishing to npm
 
+# EASIEST WAY TO RE-PUBLISH
+npm run pub
 # We publish the common package in javascript even though we write in typescript
 1. npm build will compile into js
 2. tsconfig => declaration file uncommented so we create a typescript definition file to work between js and ts
