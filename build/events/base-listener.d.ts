@@ -4,7 +4,7 @@ interface Event {
     subject: Subjects;
     data: any;
 }
-declare abstract class Listener<T extends Event> {
+export declare abstract class Listener<T extends Event> {
     private client;
     abstract subject: T['subject'];
     abstract queueGroupName: string;
@@ -15,4 +15,4 @@ declare abstract class Listener<T extends Event> {
     listen(): void;
     parseMessage(msg: Message): any;
 }
-export default Listener;
+export {};
