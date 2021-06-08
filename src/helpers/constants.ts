@@ -1,3 +1,4 @@
+/**Common variables */
 export class EnvVariables {
 
     /**
