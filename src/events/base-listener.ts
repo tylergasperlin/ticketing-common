@@ -5,7 +5,7 @@ interface Event {
     subject: Subjects;
     data: any;
 }
-abstract class Listener<T extends Event> {
+export abstract class Listener<T extends Event> {
     
     private client: Stan;
     abstract subject: T['subject'];
@@ -56,5 +56,3 @@ abstract class Listener<T extends Event> {
             : JSON.parse(data.toString('utf-8'))  
     }
 }
-
-export default Listener;

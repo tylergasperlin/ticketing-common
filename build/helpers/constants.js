@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EnvVariables = void 0;
+/**Common variables */
 var EnvVariables = /** @class */ (function () {
     function EnvVariables() {
     }

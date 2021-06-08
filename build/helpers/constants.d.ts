@@ -1,3 +1,4 @@
+/**Common variables */
 export declare class EnvVariables {
     /**
      * A jwt signing key that is created in docker kubernetes and used in depl.yaml files
