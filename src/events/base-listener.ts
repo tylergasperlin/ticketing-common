@@ -32,20 +32,30 @@ export abstract class Listener<T extends Event> {
 
     listen() {
         // implement queue groups so that we process in a round robin form. Each event is only processed once
-        const subscription = this.client.subscribe(
-            this.subject,
-            this.queueGroupName,// even if we disconnect all services the durable name will be maintained
-            this.subscriptionOptions()
-        )
-        subscription.on('message', (msg: Message) => {
-            console.log(
-                `Message received ${this.subject} / ${this.queueGroupName}`
+        console.log('listening!!!')
+        console.log(this.subject)
+        console.log(this.queueGroupName)
+        console.log(this.subscriptionOptions())
+
+        try {
+            const subscription = this.client.subscribe(
+                this.subject,
+                this.queueGroupName,// even if we disconnect all services the durable name will be maintained
+                this.subscriptionOptions()
             )
 
-            const parsedData = this.parseMessage(msg)
-            this.onMessage(parsedData, msg)
-        })
+            subscription.on('message', (msg: Message) => {
+                console.log(
+                    `Message received ${this.subject} / ${this.queueGroupName}`
+                )
+    
+                const parsedData = this.parseMessage(msg)
+                this.onMessage(parsedData, msg)
+            })
 
+        } catch (e) {
+            console.error(e)
+        }
 
     }
 
@@ -53,6 +63,6 @@ export abstract class Listener<T extends Event> {
         const data = msg.getData()
         return typeof data === 'string'
             ? JSON.parse(data)
-            : JSON.parse(data.toString('utf-8'))  
+            : JSON.parse(data.toString('utf8'))  
     }
 }
