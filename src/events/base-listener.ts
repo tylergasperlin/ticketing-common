@@ -33,9 +33,6 @@ export abstract class Listener<T extends Event> {
     listen() {
         // implement queue groups so that we process in a round robin form. Each event is only processed once
         console.log('listening!!!')
-        console.log(this.subject)
-        console.log(this.queueGroupName)
-        console.log(this.subscriptionOptions())
 
         try {
             const subscription = this.client.subscribe(

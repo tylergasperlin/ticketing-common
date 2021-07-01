@@ -17,19 +17,28 @@ var Listener = /** @class */ (function () {
     Listener.prototype.listen = function () {
         var _this = this;
         // implement queue groups so that we process in a round robin form. Each event is only processed once
-        var subscription = this.client.subscribe(this.subject, this.queueGroupName, // even if we disconnect all services the durable name will be maintained
-        this.subscriptionOptions());
-        subscription.on('message', function (msg) {
-            console.log("Message received " + _this.subject + " / " + _this.queueGroupName);
-            var parsedData = _this.parseMessage(msg);
-            _this.onMessage(parsedData, msg);
-        });
+        console.log('listening!!!');
+        console.log(this.subject);
+        console.log(this.queueGroupName);
+        console.log(this.subscriptionOptions());
+        try {
+            var subscription = this.client.subscribe(this.subject, this.queueGroupName, // even if we disconnect all services the durable name will be maintained
+            this.subscriptionOptions());
+            subscription.on('message', function (msg) {
+                console.log("Message received " + _this.subject + " / " + _this.queueGroupName);
+                var parsedData = _this.parseMessage(msg);
+                _this.onMessage(parsedData, msg);
+            });
+        }
+        catch (e) {
+            console.error(e);
+        }
     };
     Listener.prototype.parseMessage = function (msg) {
         var data = msg.getData();
         return typeof data === 'string'
             ? JSON.parse(data)
-            : JSON.parse(data.toString('utf-8'));
+            : JSON.parse(data.toString('utf8'));
     };
     return Listener;
 }());
