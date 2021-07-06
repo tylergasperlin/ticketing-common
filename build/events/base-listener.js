@@ -18,9 +18,6 @@ var Listener = /** @class */ (function () {
         var _this = this;
         // implement queue groups so that we process in a round robin form. Each event is only processed once
         console.log('listening!!!');
-        console.log(this.subject);
-        console.log(this.queueGroupName);
-        console.log(this.subscriptionOptions());
         try {
             var subscription = this.client.subscribe(this.subject, this.queueGroupName, // even if we disconnect all services the durable name will be maintained
             this.subscriptionOptions());
